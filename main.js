@@ -1,5 +1,5 @@
 let currencyUnit = localStorage.getItem('currencyUnit') || '₵';
-let salary = JSON.parse(localStorage.getItem('salary')) || 0;
+let income = JSON.parse(localStorage.getItem('income')) || 0;
 let expenses = JSON.parse(localStorage.getItem('expenses')) || [];
 
 
@@ -10,18 +10,18 @@ function setCurrency() {
 }
 
 
-function setSalary() {
-    const salaryInput = document.getElementById('salary');
-    const enteredSalary = parseFloat(salaryInput.value);
+function setIncome() {
+    const incomeInput = document.getElementById('income');
+    const enteredIncome = parseFloat(incomeInput.value);
 
-    if (isNaN(enteredSalary) || enteredSalary <= 0) {
-        alert("Please enter a valid salary amount.");
+    if (isNaN(enteredIncome) || enteredIncome <= 0) {
+        alert("Please enter a valid income amount.");
         return;
     }
 
-    salary = enteredSalary;
-    localStorage.setItem('salary', JSON.stringify(salary));
-    salaryInput.value = '';
+    income = enteredIncome;
+    localStorage.setItem('income', JSON.stringify(income));
+    incomeInput.value = '';
     updateUI();
 }
 
@@ -63,7 +63,7 @@ function updateUI() {
         expensesList.appendChild(li);
     });
 
-    const balance = salary - totalExpenses;
+    const balance = income - totalExpenses;
     balanceElement.textContent = `${currencyUnit}${balance.toFixed(2)}`;
     totalExpensesElement.textContent = `${currencyUnit}${totalExpenses.toFixed(2)}`;
 }
