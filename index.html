@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Salary & Expense Tracker</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>💰 Salary & Expense Tracker</h1>
+        <h3>Select Currency</h3>
+        <select id="currency-unit" onchange="setCurrency()">
+            <option value="₵">Cedis (₵)</option>
+            <option value="$">Dollars ($)</option>
+            <option value="€">Euros (€)</option>
+        </select>
+
+        <h3>Enter Your Salary</h3>
+        <input type="number" id="salary" placeholder="Enter your salary" min="0">
+        <button onclick="setSalary()">Set Salary</button>
+
+        <h3>Add Expense</h3>
+        <input type="text" id="expense-name" placeholder="Expense name">
+        <input type="number" id="expense-amount" placeholder="Expense amount" min="0">
+        <button onclick="addExpense()">Add Expense</button>
+
+        <div class="balance-expense-container">
+            <div class="balance-box">
+                <h3>Balance</h3>
+                <div class="balance" id="balance">0.00</div>
+            </div>
+            <div class="expense-box">
+                <h3>Total Expenses</h3>
+                <div class="expenses" id="total-expenses">0.00</div>
+            </div>
+        </div>
+
+        <h2>Expenses</h2>
+        <ul id="expenses-list"></ul>
+    </div>
+
+    <footer>
+        <p>Designed by <span>Jeffery Kobby Gaisey</span></p>
+      </footer>
+      
+
+
+    <script src="main.js"></script>
+</body>
+</html>
